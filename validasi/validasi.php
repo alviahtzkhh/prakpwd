@@ -99,9 +99,9 @@
             <?php
             echo "<tr>";
             echo "<td>".$nama."</td>";
+            echo "<td>".$email."</td>";
             echo "<td>".$website."</td>";
             echo "<td>".$comment."</td>";
-            echo "<td>".$email."</td>";
             echo "<td>".$gender."</td>";
             ?>
         </table>
