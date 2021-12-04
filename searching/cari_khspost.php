@@ -25,10 +25,12 @@ if(isset($_GET['cari'])){
     <?php
     if(isset($_GET['cari'])){
         $cari = $_GET['cari'];
-        $sql="SELECT khs.NIM, mahasiswa.nama, khs.kodeMK, khs.namaMK, khs.nilai from khs INNER JOIN mahasiswa ON khs.NIM = mahasiswa.NIM WHERE khs.NIM like '%".$cari."%'";
+        $sql="SELECT khs.NIM, mahasiswa.nama, khs.kodeMK, khs.namaMK, khs.nilai from khs INNER JOIN mahasiswa 
+        ON khs.NIM = mahasiswa.NIM WHERE khs.NIM like '%".$cari."%'";
         $tampil = mysqli_query($con,$sql);
     }else{
-        $sql="SELECT khs.NIM, mahasiswa.nama, khs.kodeMK, khs.namaMK, khs.nilai from khs INNER JOIN mahasiswa ON khs.NIM = mahasiswa.NIM";
+        $sql="SELECT khs.NIM, mahasiswa.nama, khs.kodeMK, khs.namaMK, khs.nilai from khs INNER JOIN mahasiswa 
+        ON khs.NIM = mahasiswa.NIM";
         $tampil = mysqli_query($con,$sql);
     }
     $no = 1;
