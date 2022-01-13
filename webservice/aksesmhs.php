@@ -4,6 +4,7 @@ $client = curl_init($url); //library untuk mentransfer data
 curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);//mengembalikan transfer sebagai string
 $response = curl_exec($client); //berisi output string dari url tersebut
 $result = json_decode($response); //menyandikan hasil $response kedalam format json
+
 //menampilkan data sesuai dengan data yang diambil dari database
 foreach ($result as $r) {
     echo "<p>";
