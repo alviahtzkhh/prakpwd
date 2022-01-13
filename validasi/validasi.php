@@ -1,6 +1,5 @@
 <html>
     <head>
-        <!-- menambahkan style untuk head -->
         <style>
             .error {color: #FF0000;}
         </style>
