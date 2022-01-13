@@ -1,5 +1,6 @@
 <?php
 include "../curd/koneksi.php"; //menyertakan koneksi database menggunakan file koneksi.php yang sudah dibuat pada pertemuan 3 yang berada didalam folder curd
+
 //inisialisasi variabel penampung atribut tabel user
 $id_user = $_POST['id_user'];
 $nama = $_POST['nama'];

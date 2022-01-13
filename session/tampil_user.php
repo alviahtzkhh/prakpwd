@@ -5,6 +5,7 @@ echo "<h2>User</h2>
 </form>
 <table>
 <tr><th>No</th><th>Username</th><th>NamaLengkap</th><th>Email</th><th>Aksi</th></tr>"; 
+
 include "../curd/koneksi.php"; //menyertakan koneksi database menggunakan file koneksi.php yang sudah dibuat pada pertemuan 3 yang berada didalam folder curd
 $sql="select * from users order by id_user"; // menampilkan semua data dari tabel users berdasarkan primary key (id_user)
 $tampil = mysqli_query($con,$sql); //inisialisai variabel tampil 
