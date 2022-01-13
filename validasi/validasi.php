@@ -1,58 +1,81 @@
 <html>
     <head>
+        <!-- menambahkan style untuk head -->
         <style>
             .error {color: #FF0000;}
         </style>
     </head>
     <body>
         <?php
-        // define variables and set to empty values
+        // mendefinisikan variabel dan memasukkannya kedalam nilai yang kosong
         $namaErr = $emailErr = $genderErr = $websiteErr = "";
         $nama = $email = $gender = $comment = $website = "";
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        ////mengambil data dari form dengan metode post
+        // membuat kondisi validasi input form
+        if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+            // jika nama tidak dimasukkan maka akan muncul pesan nama harus diisi
             if (empty($_POST["nama"])) {
                 $namaErr = "Nama harus diisi";
-            }else {
+            }
+            //jika nama tidak kosong maka akan dimasukkan kedalam server
+            else {
                 $nama = test_input($_POST["nama"]);
             }
+            // jika email kosong maka akan muncul pesan email harus diisi
             if (empty($_POST["email"])) {
                 $emailErr = "Email harus diisi";
-            }else {
+            }
+            //jika email terisi maka akan masukkan kedalam server
+            else {
                 $email = test_input($_POST["email"]);
-                // check if e-mail address is well-formed
+                // mengecek apakah email address yang dimasukkan sesuai dengan format email
                 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                    $emailErr = "Email tidak sesuai format";
+                    $emailErr = "Email tidak sesuai format"; // jika tidak maka akan muncul pesan email tidak sesuai format
                 }
             }
+            // jika website kosong maka akan tetap dimasukkan kedalam server dengan nilai yang kosong pula
             if (empty($_POST["website"])) {
                 $website = "";
-            }else {
+            }
+            //jika website terisi maka akan di masukkan kedalam server
+            else {
                 $website = test_input($_POST["website"]);
             }
+            // jika kolom komen kosong maka akan tetap dimasukkan kedalam server dengan nilai yang kosong pula
             if (empty($_POST["comment"])) {
                 $comment = "";
-            }else {
+            }
+            //jika komen terisi maka akan dimasukkan kedalam server
+            else {
                 $comment = test_input($_POST["comment"]);
             }
+            // gender tidak dipilih maka akan muncul pesan bahwa gender harus dipilih
             if (empty($_POST["gender"])) {
                 $genderErr = "Gender harus dipilih";
-            }else {
+            }
+            //jika gender sudah dipilih maka akan dimasukkan kedalam server
+            else {
                 $gender = test_input($_POST["gender"]);
             }
         }
 
+        //membuat fungsi untuk validasi input form
         function test_input($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
+            $data = trim($data); //untuk menghapus karakter yang tidak diperlukan
+            $data = stripslashes($data); //untuk membuang tanda backslash (/) dari input yang dimasukkan oleh user
+            $data = htmlspecialchars($data); // untuk mengkonversi karakter khusus html agar tidak diproses oleh browser
+            return $data; // mengembalikan nilai data
         }
         ?>
 
+        <!--form input html -->
         <h2>Posting Komentar </h2>
         <p><span class = "error">* Harus Diisi.</span></p>
-        <form method = "post" action = "<?php
-        echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <form method = "post" action = "
+        <?php
+        echo htmlspecialchars($_SERVER["PHP_SELF"]);//untuk melindungi variabel global $_SERVER[“PHP_SELF”] dari html injection
+        ?>">
         <table>
             <tr>
                 <td>Nama:</td>
@@ -90,9 +113,11 @@
         </table>
     </form>
 
+    <!--menampilkan hasil dari inputan form-->
     <h2> Data yang anda isi: </h2>
-    	<table width='50%' border=1>
+    	<table width='50%' border=1> <!--membuat table dengan tebal bordernya 1-->
 		    <tr>
+                <!--membuat header dari tabel-->
 			    <th>Nama</th> <th>Email</th> <th>Website</th> <th>Komentar</th><th>Gender</th>
 		    </tr>
 	

@@ -1,10 +1,10 @@
 <?php
-$url = "https://oreobiru.000webhostapp.com/getdatamhs.php";
-$client = curl_init($url);
-curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);
-$response = curl_exec($client);
-$result = json_decode($response);
-
+$url = "https://oreobiru.000webhostapp.com/getdatamhs.php"; //url file yang menampilkan data mahasiswa dari database yang sudah di hosting
+$client = curl_init($url); //library untuk mentransfer data
+curl_setopt($client, CURLOPT_RETURNTRANSFER, 1);//mengembalikan transfer sebagai string
+$response = curl_exec($client); //berisi output string dari url tersebut
+$result = json_decode($response); //menyandikan hasil $response kedalam format json
+//menampilkan data sesuai dengan data yang diambil dari database
 foreach ($result as $r) {
     echo "<p>";
     echo "NIM : " . $r->nim . "<br />";
@@ -14,3 +14,4 @@ foreach ($result as $r) {
     echo "Tgl Lahir : " . $r->ttl . "<br />";
     echo "</p>";
 }
+?>
