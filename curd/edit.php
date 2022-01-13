@@ -31,7 +31,6 @@ while($user_data = mysqli_fetch_array($result)){
     $ttl = $user_data['ttl'];
 }
 ?>
-
 <html>
     <head>
         <title>Edit Data Mahasiswa</title>

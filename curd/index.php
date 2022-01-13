@@ -16,7 +16,6 @@ $result = mysqli_query($con, "SELECT * FROM mahasiswa ");
                 <th>Nim</th> <th>Nama</th> <th>Gender</th> <th>Alamat</th>
                 <th>tgl lahir</th> <th>Update</th>
             </tr>
-            
             <?php
             while($user_data = mysqli_fetch_array($result)) {
                 echo "<tr>";
