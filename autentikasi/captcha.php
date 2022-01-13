@@ -1,5 +1,6 @@
 <?php
 session_start(); //memulai session
+
 $random_alpha = md5(rand()); // menginisialisasikan variabel untuk membuat kode captcha secara random
 $captcha_code = substr($random_alpha, 0, 6); //untuk menampilkan kode captcha sebanyak 6 karakter
 $_SESSION["captcha_code"] = $captcha_code; //menyimpan kode captcha kedalam session

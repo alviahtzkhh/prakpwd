@@ -4,6 +4,7 @@ include "../curd/koneksi.php"; //menyertakan koneksi database menggunakan file k
 //inisialisai variabel penampung atribut id_user dan password yang ada pada tabel users
 $id_user = $_POST['id_user'];
 $pass=md5($_POST['paswd']);
+
 //menampilkan semua data dari tabel users dimana id_user dan password sama
 $sql="SELECT * FROM users WHERE id_user='$id_user' AND password='$pass'";
 if ($_POST["captcha_code"] == $_SESSION["captcha_code"]) { //jika kode captcha yang diinputkan = kode captcha yang ada didalam session, maka :
