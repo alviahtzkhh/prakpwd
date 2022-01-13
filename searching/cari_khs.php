@@ -7,6 +7,7 @@ include "../curd/koneksi.php"; //menyertakan koneksi database menggunakan file k
     <input type="text" name="cari"> <!--input dengan type text-->
     <input type="submit" value="Cari"> <!--input dengan type submit-->
 </form>
+
 <?php
 if(isset($_GET['cari'])){ //jika variabel sudah didefinisikan,
     $cari = $_GET['cari']; //mendefinisikan variabel 
