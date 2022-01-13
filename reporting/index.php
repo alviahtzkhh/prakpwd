@@ -30,5 +30,6 @@ $result = mysqli_query($con, "SELECT * FROM mahasiswa ");
         </table>
         <!-- <br/><br/><a href="cetaklangsung.php">Cetak</a> -->
         <!-- <br/><br/><a href="cetakpdf.php">Cetak</a> -->
-        </center></body>
+        </center>
+    </body>
 </html>

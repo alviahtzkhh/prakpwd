@@ -24,7 +24,7 @@ $result = mysqli_query($con, "SELECT * FROM mahasiswa ");
             }
             ?>
         </table>
-        </body></center>
+    </body></center>
 </html>
 
 <script>

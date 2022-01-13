@@ -21,6 +21,7 @@ $pdf->Cell(25,6,'J KEL',1,0);
 $pdf->Cell(50,6,'ALAMAT',1,0);
 $pdf->Cell(30,6,'TANGGAL LHR',1,1);
 $pdf->SetFont('Arial','',10);
+
 include 'koneksi.php'; //menyertakan koneksi database menggunakan file koneksi.php 
 $mahasiswa = mysqli_query($con, "select * from mahasiswa"); //query sql untuk menampilkan semua data yang ada didalam tabel mahasiswa yang diinisialisasikan kedalam variabel mahasiswa
 while ($row = mysqli_fetch_array($mahasiswa)){ //menampilkan data dalam bentuk perulangan array yang mana setiap kolom dan barisnya diakses dari tabel mahasiswa
