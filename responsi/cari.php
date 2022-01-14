@@ -25,6 +25,7 @@ include 'config.php';
                   		<th scope="col">Nama</th>
                   		<th scope="col">Jurusan</th>
 			      		<th scope="col">Angkatan</th>
+                        <th scope="col">Aksi</th>
 			    	</tr>
 			  	</thead>       
                 <?php
@@ -45,6 +46,12 @@ include 'config.php';
 			        <td><?php echo $r['nama']; ?></td>
                     <td><?php echo $r['jurusan']; ?></td>
                     <td><?php echo $r['angkatan']; ?></td>
+                    <td><a href="edit.php?id=<?=$r['id']?>" 
+			    		  	class="btn btn-success">Edit</a>
+
+			      	  	<a href="curd/delete.php?id=<?=$r['id']?>" 
+			      	     	class="btn btn-danger">Hapus</a>
+			      	</td>
                 <?php } ?> 
                 </tr>
         </table>
