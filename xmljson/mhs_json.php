@@ -2,6 +2,7 @@
 include "../curd/koneksi.php"; //menyertakan koneksi database menggunakan file koneksi.php yang sudah dibuat pada pertemuan 3 yang berada didalam folder curd
 $sql="select * from mahasiswa order by nim"; //query untuk menampilkan semua data dari tabel mahasiswa berurutan berdasarkan nim yang diinisialisasikan kedalam variabel sql
 $tampil = mysqli_query($con,$sql); //mengirimkan query kedalam database yang diinisialisasikan kedalam variabel tampil
+
 if (mysqli_num_rows($tampil) > 0) { // jika jumlah baris di dalam tabel > 0, maka
     $no=1; // no = 1
     $response = array(); //inisialisasi array

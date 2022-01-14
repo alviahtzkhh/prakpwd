@@ -6,6 +6,7 @@ $hasil = mysqli_query($con,$query); //mengirimkan query kedalam database yang di
 $jumField = mysqli_num_fields($hasil); //mengembalikan jumlah bidang (kolom) dalam set hasil yang diinisialisasikan kedalam variabel jumField
 echo "<?xml version='1.0'?>"; //versi xml
 echo "<data>"; //menampilkan data
+
 while ($data = mysqli_fetch_array($hasil)){ //perulangan untuk menampung baris tabel menjadi array
     echo "<mahasiswa>"; //menampilkan teks mahasiswa ke layar
     echo"<nim>",$data['nim'],"</nim>"; //menampilkan teks nim ke layar berdasarkan nim yang ada di dalam database
